@@ -1,0 +1,29 @@
+<h1>スケジュール詳細</h1>
+
+<p>
+  <strong>タイトル：</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>開始日：</strong>
+  <%= @post.start_date.strftime("%Y/%m/%d") %>
+</p>
+
+<p>
+  <strong>終了日：</strong>
+  <%= @post.end_date.strftime("%Y/%m/%d") %>
+</p>
+
+<p>
+  <strong>終日：</strong>
+  <%= @post.all_day ? "○" : "" %>
+</p>
+
+<p>
+  <strong>内容：</strong>
+  <%= simple_format(@post.body) %>
+</p>
+
+<%= link_to "一覧に戻る", posts_path %>
+<%= link_to "編集", edit_post_path(@post) %>

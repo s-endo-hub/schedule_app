@@ -1,0 +1,44 @@
+<%= form_with model: post do |form| %>
+
+  <% if post.errors.any? %>
+    <div>
+      <h2><%= post.errors.count %>件のエラーがあります</h2>
+
+      <ul>
+        <% post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, "タイトル" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :start_date, "開始日" %>
+    <%= form.date_field :start_date %>
+  </div>
+
+  <div>
+    <%= form.label :end_date, "終了日" %>
+    <%= form.date_field :end_date %>
+  </div>
+
+  <div>
+    <%= form.label :all_day, "終日" %>
+    <%= form.check_box :all_day %>
+  </div>
+
+  <div>
+    <%= form.label :body, "内容" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit "登録する" %>
+  </div>
+
+<% end %>
