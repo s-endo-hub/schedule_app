@@ -18,12 +18,20 @@
   </head>
 
   <body>
-    <% flash.each do |key, message| %>
-      <div>
-        <%= message %>
+    <header class="header">
+      <div class="container">
+        <%= link_to "Schedule App", posts_path, class: "logo" %>
       </div>
-    <% end %>
-    
-    <%= yield %>
+    </header>
+
+    <main class="container">
+      <% flash.each do |key, message| %>
+        <div class="flash">
+          <%= message %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </main>
   </body>
 </html>
